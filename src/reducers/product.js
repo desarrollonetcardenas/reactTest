@@ -7,5 +7,4 @@ export const product = (state = {}, action) =>{
     default:
       return state;
   }
-  return state;
 }
