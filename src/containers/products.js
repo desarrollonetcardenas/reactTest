@@ -5,66 +5,69 @@ import {setProduct} from '../actions';
 export class Products extends Component{
 
   handleSaveProduct = product => {
-    console.log('function');
     this.props.dispatchSaveProduct(setProduct(product));
   }
 
-  handleChangeName(e) {
-    console.log('asdf');
-    debugger;
-    this.setState({
-      name: e.target.value
-    });
+  handleChangeName = name =>{
+    console.log(name);
   }
 
-  handleChangeTotal(e){
-    console.log('total changed');
-    this.setState({total: e.target.value});
+  handleChangePrice = price =>{
+    console.log(price);
   }
+
+  handleChangeQuantity = quantity => {
+    console.log(quantity);
+  }
+
+  handleChangeTotal = total =>{
+    console.log(total);
+  }
+
   render(){
     const { name, price, quantity, total } = this.props.product;
     return(
       <tr>
-          <td class="col m2 c2">
-            <fieldset class="input-campo">
-                <input type="text" name="nombre" value={name} required onChange={this.handleChangeName} />
+          <td className="col m2 c2">
+            <fieldset className="input-campo">
+                <input type="text" name="nombre" value={name} onChange={this.handleChangeName} required />
                 <label>Product name</label>
-                <div class="borde val__normal"></div>
-                <a href="#" class="limpiar"><i class="material-icons">close</i></a>
+                <div className="borde val__normal"></div>
+                <a href="##" className="limpiar"><i className="material-icons">close</i></a>
               </fieldset>
             </td>
-            <td class="col m2 c2">
-              <fieldset class="input-campo">
-                <input type="text" name="price" value={price} required />
+            <td className="col m2 c2">
+              <fieldset className="input-campo">
+                <input type="text" name="price" value={price} onChange={this.handleChangePrice} required />
                 <label>Price</label>
-                <div class="borde val__normal"></div>
-                <a href="#" class="limpiar"><i class="material-icons">close</i></a>
+                <div className="borde val__normal"></div>
+                <a href="##" className="limpiar"><i className="material-icons">close</i></a>
               </fieldset>
             </td>
-            <td class="col m2 c2">
-                <fieldset class="input-campo">
-                  <input type="text" name="quantity" value={quantity} required />
+            <td className="col m2 c2">
+                <fieldset className="input-campo">
+                  <input type="text" name="quantity" value={quantity} onChange={this.handleChangeQuantity} required />
                   <label>Quantity</label>
-                  <div class="borde val__normal"></div>
-                  <a href="#" class="limpiar"><i class="material-icons">close</i></a>
+                  <div className="borde val__normal"></div>
+                  <a href="##" className="limpiar"><i className="material-icons">close</i></a>
                 </fieldset>
             </td>
-            <td class="col m2 c2">
-                <fieldset class="input-campo">
-                  <input type="text" name="total" value={total} required onChange={this.handleChangeTotal} />
+            <td className="col m2 c2">
+                <fieldset className="input-campo">
+                  <input type="text" name="total" value={total} onChange={this.handleChangeTotal} required />
                   <label>Total</label>
-                  <div class="borde val__normal"></div>
-                  <a href="#" class="limpiar"><i class="material-icons">close</i></a>
+                  <div className="borde val__normal"></div>
+                  <a href="##" className="limpiar"><i className="material-icons">close</i></a>
                 </fieldset>
             </td>
-            <td class="col m2 c2">
-              <button class="sd btn" onClick={this.handleSaveProduct}>
-                  <i class="material-icons">save</i>
+            <td className="col m2 c2">
+              <button className="sd btn" onClick={this.handleSaveProduct}>
+                  <i className="material-icons">save</i>
               </button>
             </td>
-            <td class="col m2 c2">
-              <button class="sd btn">
-                  <i class="material-icons">delete</i>
+            <td className="col m2 c2">
+              <button className="sd btn">
+                  <i className="material-icons">delete</i>
               </button>
             </td>
       </tr>

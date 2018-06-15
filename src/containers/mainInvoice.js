@@ -9,8 +9,8 @@ import { ProductListContainer } from './productListContainer';
 export class MainInvoice extends Component {
   render(){
     return(
-      <div class="contenedor pd-ar-10">
-        <table class="tabla tabla-zebra">
+      <div className="contenedor pd-ar-10">
+        <table className="tabla tabla-zebra">
             <thead>
                 <tr>
                     <th>Name</th>
